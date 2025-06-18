@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block title %}Informations Écologiques - EcoAlerte{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="page-header py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 mb-4">
+                    <i class="fas fa-info-circle text-primary"></i> Informations Écologiques
+                </h1>
+                <p class="lead">Découvrez les données cruciales sur l'état de notre planète et comprenez l'urgence d'agir</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Environmental Facts Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="info-card h-100">
+                    <div class="card-header bg-danger text-white">
+                        <h3><i class="fas fa-trash-alt"></i> Pollution Plastique</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-highlight">
+                            <span class="stat-number">8 millions</span>
+                            <span class="stat-unit">tonnes/an</span>
+                        </div>
+                        <p>de plastique finissent dans nos océans chaque année.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success"></i> 1 million d'oiseaux marins tués annuellement</li>
+                            <li><i class="fas fa-check text-success"></i> 100 000 mammifères marins affectés</li>
+                            <li><i class="fas fa-check text-success"></i> 5 continents de plastique flottants</li>
+                        </ul>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-danger" style="width: 95%"></div>
+                        </div>
+                        <small class="text-muted">95% du plastique n'est pas recyclé</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="info-card h-100">
+                    <div class="card-header bg-warning text-white">
+                        <h3><i class="fas fa-utensils"></i> Gaspillage Alimentaire</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-highlight">
+                            <span class="stat-number">1/3</span>
+                            <span class="stat-unit">de la production</span>
+                        </div>
+                        <p>de la nourriture mondiale est gaspillée chaque année.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success"></i> 1,3 milliard de tonnes perdues</li>
+                            <li><i class="fas fa-check text-success"></i> 8% des émissions de GES</li>
+                            <li><i class="fas fa-check text-success"></i> 820 millions de personnes sous-alimentées</li>
+                        </ul>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-warning" style="width: 33%"></div>
+                        </div>
+                        <small class="text-muted">33% de gaspillage vs 11% de personnes sous-alimentées</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="info-card h-100">
+                    <div class="card-header bg-info text-white">
+                        <h3><i class="fas fa-bolt"></i> Consommation Énergétique</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-highlight">
+                            <span class="stat-number">80%</span>
+                            <span class="stat-unit">d'économie</span>
+                        </div>
+                        <p>d'énergie possible avec les ampoules LED.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success"></i> Durée de vie : 25 000h vs 1 000h</li>
+                            <li><i class="fas fa-check text-success"></i> Moins de chaleur dégagée</li>
+                            <li><i class="fas fa-check text-success"></i> Réduction immédiate de la facture</li>
+                        </ul>
+                        <div class="energy-comparison">
+                            <div class="d-flex justify-content-between">
+                                <span>LED</span>
+                                <span>Incandescent</span>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 20%">9W</div>
+                                <div class="progress-bar bg-danger" style="width: 80%">60W</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="info-card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h3><i class="fas fa-car"></i> Transport Écologique</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-highlight">
+                            <span class="stat-number">24%</span>
+                            <span class="stat-unit">des émissions</span>
+                        </div>
+                        <p>mondiales de CO2 viennent des transports.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success"></i> 1 km à vélo = 0g CO2</li>
+                            <li><i class="fas fa-check text-success"></i> 1 km en voiture = 120g CO2</li>
+                            <li><i class="fas fa-check text-success"></i> Transport en commun : -75% d'émissions</li>
+                        </ul>
+                        <div class="transport-impact">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span><i class="fas fa-bicycle text-success"></i> Vélo</span>
+                                <span class="badge bg-success">0g CO2/km</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span><i class="fas fa-bus text-primary"></i> Bus</span>
+                                <span class="badge bg-primary">30g CO2/km</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-car text-danger"></i> Voiture</span>
+                                <span class="badge bg-danger">120g CO2/km</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Climate Change Timeline -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center mb-5">Évolution du changement climatique</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-warning"></div>
+                        <div class="timeline-content">
+                            <h4>1880 - Début des mesures</h4>
+                            <p>Première mesure systématique des températures mondiales</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-info"></div>
+                        <div class="timeline-content">
+                            <h4>1958 - Courbe de Keeling</h4>
+                            <p>Première mesure continue du CO2 atmosphérique : 315 ppm</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-warning"></div>
+                        <div class="timeline-content">
+                            <h4>1988 - Création du GIEC</h4>
+                            <p>Groupe d'experts intergouvernemental sur l'évolution du climat</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-danger"></div>
+                        <div class="timeline-content">
+                            <h4>2023 - Record historique</h4>
+                            <p>CO2 atmosphérique : 421 ppm - Température : +1,1°C</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Positive Impact Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">Mais il y a de l'espoir ! 🌱</h2>
+                <p class="lead mb-4">
+                    Chaque année, 8 millions de tonnes de plastique finissent dans nos océans. 
+                    En changeant nos habitudes, nous pouvons inverser la tendance.
+                </p>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="hope-stat">
+                            <i class="fas fa-arrow-up text-success fa-2x mb-2"></i>
+                            <h4>+23%</h4>
+                            <p>d'énergies renouvelables depuis 2010</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="hope-stat">
+                            <i class="fas fa-recycle text-primary fa-2x mb-2"></i>
+                            <h4>+15%</h4>
+                            <p>de recyclage dans le monde</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="hope-stat">
+                            <i class="fas fa-tree text-success fa-2x mb-2"></i>
+                            <h4>3 milliards</h4>
+                            <p>d'arbres plantés chaque année</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{{ url_for('actions') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-hand-holding-heart"></i> Passer à l'action
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

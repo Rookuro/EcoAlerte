@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <span class="text-primary">EcoAlerte</span><br>
+                        Chaque clic compte pour la planète
+                    </h1>
+                    <p class="lead mb-4">
+                        Un clic pour la nature, une action pour demain. Découvrez comment vos petits gestes quotidiens peuvent avoir un impact énorme sur notre planète.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-play-circle"></i> Commencer le Quiz
+                        </a>
+                        <a href="{{ url_for('info') }}" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-info-circle"></i> En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-illustration">
+                    <div class="planet-container">
+                        <div class="planet">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div class="orbit">
+                            <div class="satellite">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-recycle text-primary"></i>
+                    </div>
+                    <h3 class="counter" data-count="8">0</h3>
+                    <p>Millions de tonnes de plastique dans les océans chaque année</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-temperature-high text-danger"></i>
+                    </div>
+                    <h3 class="counter" data-count="1.1">0</h3>
+                    <p>Degrés d'augmentation de la température mondiale</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-utensils text-warning"></i>
+                    </div>
+                    <h3><span class="counter" data-count="33">0</span>%</h3>
+                    <p>De la nourriture produite est gaspillée</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-lightbulb text-success"></i>
+                    </div>
+                    <h3><span class="counter" data-count="80">0</span>%</h3>
+                    <p>D'économie d'énergie avec les LED</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">Prêt à faire la différence ?</h2>
+                <p class="lead mb-4">
+                    Chaque petit geste est une victoire pour la planète. Commencez votre voyage écologique dès maintenant avec nos outils interactifs et nos conseils pratiques.
+                </p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('quiz') }}" class="btn btn-success btn-lg me-3">
+                        <i class="fas fa-brain"></i> Tester mes connaissances
+                    </a>
+                    <a href="{{ url_for('actions') }}" class="btn btn-outline-success btn-lg">
+                        <i class="fas fa-tasks"></i> Voir les actions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2>Pourquoi agir maintenant ?</h2>
+                <p class="lead">Découvrez l'impact de vos actions sur l'environnement</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-water text-primary"></i>
+                    </div>
+                    <h4>Océans en danger</h4>
+                    <p>Nos océans étouffent sous le plastique. Chaque année, 8 millions de tonnes de déchets plastiques y sont déversées.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-thermometer-half text-danger"></i>
+                    </div>
+                    <h4>Réchauffement climatique</h4>
+                    <p>La température mondiale a augmenté de 1,1°C depuis l'ère préindustrielle, causant des changements climatiques majeurs.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-seedling text-success"></i>
+                    </div>
+                    <h4>Solutions d'avenir</h4>
+                    <p>Ensemble, nous pouvons inverser la tendance. Chaque action compte pour construire un futur durable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz Écologique - EcoAlerte{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- Quiz Header -->
+<section class="page-header py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 mb-4">
+                    <i class="fas fa-brain text-primary"></i> Quiz Écologique
+                </h1>
+                <p class="lead">Testez vos connaissances sur l'environnement et découvrez votre niveau d'expertise écologique !</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quiz Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Quiz Progress -->
+                <div class="quiz-progress mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span>Question <span id="current-question">1</span> sur 5</span>
+                        <span id="quiz-timer">⏱️ 0:00</span>
+                    </div>
+                    <div class="progress">
+                        <div id="progress-bar" class="progress-bar bg-success" style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <!-- Quiz Container -->
+                <div id="quiz-container" class="quiz-card">
+                    <!-- Question 1 -->
+                    <div class="question-card active" data-question="q1">
+                        <h3 class="question-title">
+                            <i class="fas fa-water text-primary"></i> 
+                            Combien de tonnes de plastique finissent dans les océans chaque année ?
+                        </h3>
+                        <div class="answers-grid">
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="a">
+                                <span class="answer-text">5 millions de tonnes</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="b">
+                                <span class="answer-text">8 millions de tonnes</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="c">
+                                <span class="answer-text">12 millions de tonnes</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="d">
+                                <span class="answer-text">15 millions de tonnes</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-card" data-question="q2">
+                        <h3 class="question-title">
+                            <i class="fas fa-cow text-warning"></i>
+                            Quelle part des émissions de gaz à effet de serre est due à l'élevage ?
+                        </h3>
+                        <div class="answers-grid">
+                            <label class="answer-option">
+                                <input type="radio" name="q2" value="a">
+                                <span class="answer-text">8%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q2" value="b">
+                                <span class="answer-text">11%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q2" value="c">
+                                <span class="answer-text">14%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q2" value="d">
+                                <span class="answer-text">18%</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-card" data-question="q3">
+                        <h3 class="question-title">
+                            <i class="fas fa-utensils text-danger"></i>
+                            Quelle proportion de la nourriture produite est gaspillée ?
+                        </h3>
+                        <div class="answers-grid">
+                            <label class="answer-option">
+                                <input type="radio" name="q3" value="a">
+                                <span class="answer-text">1/3 (33%)</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q3" value="b">
+                                <span class="answer-text">1/4 (25%)</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q3" value="c">
+                                <span class="answer-text">1/5 (20%)</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q3" value="d">
+                                <span class="answer-text">1/6 (16%)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-card" data-question="q4">
+                        <h3 class="question-title">
+                            <i class="fas fa-lightbulb text-success"></i>
+                            Combien d'énergie économisent les ampoules LED par rapport aux incandescentes ?
+                        </h3>
+                        <div class="answers-grid">
+                            <label class="answer-option">
+                                <input type="radio" name="q4" value="a">
+                                <span class="answer-text">60%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q4" value="b">
+                                <span class="answer-text">80%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q4" value="c">
+                                <span class="answer-text">90%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q4" value="d">
+                                <span class="answer-text">95%</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-card" data-question="q5">
+                        <h3 class="question-title">
+                            <i class="fas fa-car text-info"></i>
+                            Quelle part des émissions mondiales de CO2 représente le transport ?
+                        </h3>
+                        <div class="answers-grid">
+                            <label class="answer-option">
+                                <input type="radio" name="q5" value="a">
+                                <span class="answer-text">16%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q5" value="b">
+                                <span class="answer-text">20%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q5" value="c">
+                                <span class="answer-text">24%</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q5" value="d">
+                                <span class="answer-text">28%</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Navigation -->
+                <div class="quiz-navigation mt-4">
+                    <button id="prev-btn" class="btn btn-outline-secondary" disabled>
+                        <i class="fas fa-arrow-left"></i> Précédent
+                    </button>
+                    <button id="next-btn" class="btn btn-primary">
+                        Suivant <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="submit-btn" class="btn btn-success" style="display: none;">
+                        <i class="fas fa-check"></i> Terminer le Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results Section (Hidden initially) -->
+<section id="quiz-results" class="py-5" style="display: none;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="results-card text-center">
+                    <div class="results-icon mb-4">
+                        <i id="results-emoji" class="fas fa-trophy fa-4x text-warning"></i>
+                    </div>
+                    <h2 id="results-title" class="mb-3">Félicitations !</h2>
+                    <div class="score-display mb-4">
+                        <div class="score-circle">
+                            <canvas id="score-chart" width="200" height="200"></canvas>
+                            <div class="score-text">
+                                <span id="score-percentage">0%</span>
+                                <small id="score-fraction">0/5</small>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 id="eco-level" class="mb-3 text-primary">Expert Écologique</h3>
+                    <p id="results-message" class="lead mb-4">
+                        Excellent ! Vous êtes un vrai champion de l'environnement !
+                    </p>
+                    <div class="results-actions">
+                        <button id="retry-quiz" class="btn btn-outline-primary me-3">
+                            <i class="fas fa-redo"></i> Refaire le Quiz
+                        </button>
+                        <a href="{{ url_for('actions') }}" class="btn btn-success me-3">
+                            <i class="fas fa-hand-holding-heart"></i> Passer à l'action
+                        </a>
+                        <a href="{{ url_for('share') }}" class="btn btn-primary">
+                            <i class="fas fa-share-alt"></i> Partager mon score
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fun Facts Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2>Le saviez-vous ? 🤔</h2>
+                <p class="lead">Quelques faits étonnants sur l'environnement</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="fun-fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-tree text-success"></i>
+                    </div>
+                    <h4>Un arbre adulte</h4>
+                    <p>produit suffisamment d'oxygène pour 2 personnes par jour et absorbe 22 kg de CO2 par an.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="fun-fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-tint text-primary"></i>
+                    </div>
+                    <h4>Une goutte d'eau</h4>
+                    <p>peut polluer 25 litres d'eau propre. Chaque goutte compte dans la préservation de nos ressources !</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="fun-fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-sun text-warning"></i>
+                    </div>
+                    <h4>L'énergie solaire</h4>
+                    <p>qui atteint la Terre en 1 heure pourrait alimenter le monde entier pendant 1 an !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}

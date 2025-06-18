@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+
+{% block title %}Partager - EcoAlerte{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="page-header py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 mb-4">
+                    <i class="fas fa-share-alt text-primary"></i> Partagez le Message
+                </h1>
+                <p class="lead">Multipliez l'impact en partageant EcoAlerte avec votre communauté</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sharing Options -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Social Media Sharing -->
+                <div class="sharing-section mb-5">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-thumbs-up"></i> Partagez sur les réseaux sociaux
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="share-btn facebook-share" onclick="shareOnFacebook()">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Partager sur Facebook</span>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="share-btn twitter-share" onclick="shareOnTwitter()">
+                                <i class="fab fa-twitter"></i>
+                                <span>Partager sur Twitter</span>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="share-btn linkedin-share" onclick="shareOnLinkedIn()">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>Partager sur LinkedIn</span>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="share-btn whatsapp-share" onclick="shareOnWhatsApp()">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Partager sur WhatsApp</span>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="share-btn instagram-share" onclick="shareOnInstagram()">
+                                <i class="fab fa-instagram"></i>
+                                <span>Partager sur Instagram</span>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="share-btn email-share" onclick="shareByEmail()">
+                                <i class="fas fa-envelope"></i>
+                                <span>Partager par Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-written Messages -->
+                <div class="sharing-section mb-5">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-comment-dots"></i> Messages prêts à partager
+                    </h2>
+                    <div class="message-templates">
+                        <div class="message-card">
+                            <div class="message-content">
+                                <p>"Chaque petit geste est une victoire pour la planète ! 🌍 Découvrez comment vos actions quotidiennes peuvent sauver notre environnement avec EcoAlerte. #EcoAlerte #IAForGood #SaveThePlanet"</p>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm copy-message" onclick="copyMessage(this)">
+                                <i class="fas fa-copy"></i> Copier
+                            </button>
+                        </div>
+                        
+                        <div class="message-card">
+                            <div class="message-content">
+                                <p>"8 millions de tonnes de plastique dans nos océans chaque année... Il est temps d'agir ! 🌊 Testez vos connaissances écologiques sur EcoAlerte et découvrez comment faire la différence. #ActionClimat #Environnement"</p>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm copy-message" onclick="copyMessage(this)">
+                                <i class="fas fa-copy"></i> Copier
+                            </button>
+                        </div>
+                        
+                        <div class="message-card">
+                            <div class="message-content">
+                                <p>"Un clic pour la nature, une action pour demain ! ✨ Rejoignez le mouvement EcoAlerte et découvrez des gestes simples pour protéger notre planète. Ensemble, nous pouvons inverser la tendance ! 🌱"</p>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm copy-message" onclick="copyMessage(this)">
+                                <i class="fas fa-copy"></i> Copier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Custom Message -->
+                <div class="sharing-section mb-5">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-magic"></i> Créez votre message personnalisé
+                    </h2>
+                    <div class="custom-message">
+                        <div class="mb-3">
+                            <label for="userName" class="form-label">Votre nom (optionnel) :</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Votre nom">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userAction" class="form-label">Quelle action avez-vous adoptée ?</label>
+                            <select class="form-select" id="userAction">
+                                <option value="">Choisissez une action...</option>
+                                <option value="échangé mes ampoules contre des LED">échangé mes ampoules contre des LED</option>
+                                <option value="commencé à utiliser le vélo pour mes trajets courts">commencé à utiliser le vélo pour mes trajets courts</option>
+                                <option value="réduit mon gaspillage alimentaire">réduit mon gaspillage alimentaire</option>
+                                <option value="adopté le tri sélectif">adopté le tri sélectif</option>
+                                <option value="commencé le compostage">commencé le compostage</option>
+                                <option value="privilégié les transports en commun">privilégié les transports en commun</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customMessage" class="form-label">Votre message :</label>
+                            <textarea class="form-control" id="customMessage" rows="4" readonly></textarea>
+                        </div>
+                        <button class="btn btn-primary" onclick="generateCustomMessage()">
+                            <i class="fas fa-wand-magic-sparkles"></i> Générer le message
+                        </button>
+                        <button class="btn btn-outline-success" onclick="copyCustomMessage()" id="copyCustomBtn" style="display: none;">
+                            <i class="fas fa-copy"></i> Copier le message
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Share Statistics -->
+                <div class="sharing-section mb-5">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-chart-line"></i> Notre impact ensemble
+                    </h2>
+                    <div class="row text-center">
+                        <div class="col-md-3 mb-3">
+                            <div class="impact-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users text-primary"></i>
+                                </div>
+                                <h3 class="counter" data-count="1250">0</h3>
+                                <p>Personnes sensibilisées</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="impact-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-share-alt text-success"></i>
+                                </div>
+                                <h3 class="counter" data-count="890">0</h3>
+                                <p>Partages sur les réseaux</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="impact-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-leaf text-warning"></i>
+                                </div>
+                                <h3 class="counter" data-count="2340">0</h3>
+                                <p>Actions écologiques adoptées</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="impact-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-globe text-info"></i>
+                                </div>
+                                <h3 class="counter" data-count="45">0</h3>
+                                <p>Pays touchés</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Section -->
+                <div class="sharing-section mb-5">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-qrcode"></i> Partagez facilement avec un QR Code
+                    </h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 text-center">
+                            <div class="qr-code-container">
+                                <div class="qr-placeholder">
+                                    <i class="fas fa-qrcode fa-8x text-muted"></i>
+                                    <p class="mt-3">QR Code vers EcoAlerte</p>
+                                    <small class="text-muted">Scannez pour accéder au site</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary mt-3" onclick="generateQRCode()">
+                                <i class="fas fa-download"></i> Télécharger le QR Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Final -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">Merci de faire partie du changement ! 🙏</h2>
+                <p class="lead mb-4">
+                    Votre engagement inspire d'autres personnes à agir. Ensemble, nous construisons un avenir plus durable pour notre planète.
+                </p>
+                <blockquote class="blockquote">
+                    <p class="mb-0">"Agir localement, impacter globalement"</p>
+                    <footer class="blockquote-footer mt-2">
+                        La philosophie <cite title="EcoAlerte">EcoAlerte</cite>
+                    </footer>
+                </blockquote>
+                <div class="mt-4">
+                    <a href="{{ url_for('index') }}" class="btn btn-success btn-lg me-3">
+                        <i class="fas fa-home"></i> Retour à l'accueil
+                    </a>
+                    <a href="{{ url_for('actions') }}" class="btn btn-outline-success btn-lg">
+                        <i class="fas fa-hand-holding-heart"></i> Découvrir plus d'actions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Toast for Copy Feedback -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="copyToast" class="toast" role="alert">
+        <div class="toast-header">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong class="me-auto">Copié !</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            Le message a été copié dans votre presse-papier.
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Sharing functions
+function shareOnFacebook() {
+    const url = encodeURIComponent(window.location.origin);
+    const text = encodeURIComponent("Découvrez EcoAlerte - Chaque clic compte pour la planète ! 🌍");
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank');
+}
+
+function shareOnTwitter() {
+    const url = encodeURIComponent(window.location.origin);
+    const text = encodeURIComponent("Chaque petit geste est une victoire pour la planète ! 🌍 Découvrez EcoAlerte #EcoAlerte #IAForGood #SaveThePlanet");
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+}
+
+function shareOnLinkedIn() {
+    const url = encodeURIComponent(window.location.origin);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+}
+
+function shareOnWhatsApp() {
+    const text = encodeURIComponent(`Chaque petit geste est une victoire pour la planète ! 🌍 Découvrez EcoAlerte : ${window.location.origin}`);
+    window.open(`https://wa.me/?text=${text}`, '_blank');
+}
+
+function shareOnInstagram() {
+    alert("Pour partager sur Instagram, copiez le lien et partagez-le dans votre story ou vos messages !");
+    copyToClipboard(window.location.origin);
+}
+
+function shareByEmail() {
+    const subject = encodeURIComponent("Découvrez EcoAlerte - Agissons ensemble pour la planète");
+    const body = encodeURIComponent(`Bonjour,
+
+Je voulais partager avec vous EcoAlerte, un site qui m'a vraiment inspiré(e) à adopter des gestes plus écologiques.
+
+Chaque petit geste est une victoire pour la planète ! Le site propose des informations importantes sur l'environnement, un quiz interactif pour tester nos connaissances, et surtout des actions concrètes que nous pouvons tous adopter au quotidien.
+
+Découvrez-le ici : ${window.location.origin}
+
+Ensemble, nous pouvons faire la différence ! 🌍
+
+À bientôt !`);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+}
+
+// Copy message functions
+function copyMessage(button) {
+    const messageText = button.parentElement.querySelector('.message-content p').textContent;
+    copyToClipboard(messageText);
+    showCopyToast();
+}
+
+function generateCustomMessage() {
+    const name = document.getElementById('userName').value;
+    const action = document.getElementById('userAction').value;
+    const messageArea = document.getElementById('customMessage');
+    
+    if (!action) {
+        alert('Veuillez choisir une action !');
+        return;
+    }
+    
+    let message = "";
+    if (name) {
+        message = `Salut ! Je suis ${name} et j'ai ${action} grâce à EcoAlerte ! 🌱\n\n`;
+    } else {
+        message = `J'ai ${action} grâce à EcoAlerte ! 🌱\n\n`;
+    }
+    
+    message += `Chaque petit geste compte pour notre planète. Découvrez comment vous aussi pouvez faire la différence : ${window.location.origin}\n\n#EcoAlerte #IAForGood #ActionClimat 🌍`;
+    
+    messageArea.value = message;
+    document.getElementById('copyCustomBtn').style.display = 'inline-block';
+}
+
+function copyCustomMessage() {
+    const messageText = document.getElementById('customMessage').value;
+    if (messageText) {
+        copyToClipboard(messageText);
+        showCopyToast();
+    }
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        console.log('Text copied to clipboard');
+    }).catch(function(err) {
+        console.error('Error copying text: ', err);
+        // Fallback method
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    });
+}
+
+function showCopyToast() {
+    const toast = new bootstrap.Toast(document.getElementById('copyToast'));
+    toast.show();
+}
+
+function generateQRCode() {
+    // In a real implementation, you would generate an actual QR code
+    alert('Fonctionnalité à venir ! Le QR Code sera bientôt disponible au téléchargement.');
+}
+
+// Initialize counters when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            counter.textContent = Math.floor(current);
+        }, 20);
+    });
+});
+</script>
+{% endblock %}

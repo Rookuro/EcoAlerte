@@ -1,0 +1,503 @@
+{% extends "base.html" %}
+
+{% block title %}Actions Écologiques - EcoAlerte{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="page-header py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 mb-4">
+                    <i class="fas fa-hand-holding-heart text-success"></i> Passons à l'Action
+                </h1>
+                <p class="lead">Découvrez des gestes simples et concrets pour protéger notre planète au quotidien</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Action Categories -->
+<section class="py-5">
+    <div class="container">
+        <!-- Category Navigation -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <ul class="nav nav-pills justify-content-center category-nav" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#home-actions">
+                            <i class="fas fa-home"></i> À la maison
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#transport-actions">
+                            <i class="fas fa-car"></i> Transport
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#food-actions">
+                            <i class="fas fa-utensils"></i> Alimentation
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#waste-actions">
+                            <i class="fas fa-recycle"></i> Déchets
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Home Actions -->
+            <div class="tab-pane fade show active" id="home-actions">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-lightbulb text-warning"></i>
+                            </div>
+                            <h4>Éclairage LED</h4>
+                            <p>Remplacez vos ampoules par des LED et économisez jusqu'à 80% d'énergie.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star-half-alt text-success"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>💡 Astuce :</strong> Une LED de 9W remplace une ampoule de 60W</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-thermometer-half text-primary"></i>
+                            </div>
+                            <h4>Thermostat intelligent</h4>
+                            <p>Réduisez de 1°C votre chauffage et économisez 7% sur votre facture.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🌡️ Astuce :</strong> 19°C dans les chambres, 21°C dans le salon</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-plug text-danger"></i>
+                            </div>
+                            <h4>Débranchez les appareils</h4>
+                            <p>Éteignez complètement vos appareils pour éviter la consommation fantôme.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🔌 Astuce :</strong> Utilisez des multiprises avec interrupteur</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-shower text-info"></i>
+                            </div>
+                            <h4>Douches courtes</h4>
+                            <p>Limitez vos douches à 5 minutes pour économiser l'eau et l'énergie.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🚿 Astuce :</strong> Une douche de 5 min = 60L vs 150L pour un bain</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-seedling text-success"></i>
+                            </div>
+                            <h4>Plantes d'intérieur</h4>
+                            <p>Ajoutez des plantes pour purifier l'air et créer un environnement sain.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🌱 Astuce :</strong> Ficus, pothos et sansevieria sont très efficaces</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-tshirt text-secondary"></i>
+                            </div>
+                            <h4>Lavage à froid</h4>
+                            <p>Lavez votre linge à 30°C au lieu de 60°C pour économiser l'énergie.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>👕 Astuce :</strong> 90% de l'énergie sert à chauffer l'eau</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transport Actions -->
+            <div class="tab-pane fade" id="transport-actions">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-bicycle text-primary"></i>
+                            </div>
+                            <h4>Vélo et marche</h4>
+                            <p>Privilégiez les déplacements à vélo ou à pied pour les trajets courts.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🚴 Astuce :</strong> 0g CO2/km et excellent pour la santé !</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-bus text-success"></i>
+                            </div>
+                            <h4>Transports en commun</h4>
+                            <p>Utilisez bus, métro, tram pour réduire votre empreinte carbone.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🚌 Astuce :</strong> 75% d'émissions en moins qu'une voiture</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-users text-info"></i>
+                            </div>
+                            <h4>Covoiturage</h4>
+                            <p>Partagez vos trajets pour diviser les émissions et faire des économies.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🚗 Astuce :</strong> 4 personnes = 4x moins d'émissions par personne</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Actions -->
+            <div class="tab-pane fade" id="food-actions">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-carrot text-warning"></i>
+                            </div>
+                            <h4>Alimentation locale</h4>
+                            <p>Privilégiez les produits locaux et de saison pour réduire le transport.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🥕 Astuce :</strong> Visitez les marchés locaux et AMAP</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-trash-alt text-danger"></i>
+                            </div>
+                            <h4>Réduire le gaspillage</h4>
+                            <p>Planifiez vos repas et utilisez vos restes pour éviter le gaspillage.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🗑️ Astuce :</strong> Faites une liste de courses et vérifiez vos stocks</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-leaf text-success"></i>
+                            </div>
+                            <h4>Plus de végétal</h4>
+                            <p>Intégrez plus de légumes dans votre alimentation, c'est bon pour vous et la planète.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🌿 Astuce :</strong> Essayez un jour végétarien par semaine</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Waste Actions -->
+            <div class="tab-pane fade" id="waste-actions">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-recycle text-primary"></i>
+                            </div>
+                            <h4>Tri sélectif</h4>
+                            <p>Triez correctement vos déchets pour optimiser le recyclage.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>♻️ Astuce :</strong> Rincez les emballages avant de les jeter</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-shopping-bag text-success"></i>
+                            </div>
+                            <h4>Sacs réutilisables</h4>
+                            <p>Utilisez des sacs en tissu ou réutilisables pour vos courses.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🛍️ Astuce :</strong> Un sac réutilisable remplace 1000 sacs plastique</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-seedling text-warning"></i>
+                            </div>
+                            <h4>Compostage</h4>
+                            <p>Compostez vos déchets organiques pour créer un engrais naturel.</p>
+                            <div class="impact-meter">
+                                <div class="impact-label">Impact :</div>
+                                <div class="impact-stars">
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="fas fa-star text-success"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="action-tip">
+                                <small><strong>🌱 Astuce :</strong> 30% de nos déchets peuvent être compostés</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Challenge Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">🎯 Défi 30 jours pour la planète</h2>
+                <p class="lead mb-4">
+                    Relevez notre défi et adoptez une nouvelle habitude écologique chaque semaine !
+                </p>
+                <div class="challenge-timeline">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="challenge-week">
+                                <div class="week-number">1</div>
+                                <h5>Semaine Énergie</h5>
+                                <p>Remplacez 3 ampoules par des LED</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="challenge-week">
+                                <div class="week-number">2</div>
+                                <h5>Semaine Transport</h5>
+                                <p>Utilisez le vélo ou la marche 3 fois</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="challenge-week">
+                                <div class="week-number">3</div>
+                                <h5>Semaine Alimentation</h5>
+                                <p>Achetez local et réduisez le gaspillage</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="challenge-week">
+                                <div class="week-number">4</div>
+                                <h5>Semaine Déchets</h5>
+                                <p>Zéro déchet plastique pendant 7 jours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#challengeModal">
+                        <i class="fas fa-rocket"></i> Accepter le Défi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Challenge Modal -->
+<div class="modal fade" id="challengeModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-rocket"></i> Défi 30 jours accepté !
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="mb-4">
+                    <i class="fas fa-trophy fa-4x text-warning"></i>
+                </div>
+                <h4 class="mb-3">Félicitations ! 🎉</h4>
+                <p>Vous venez de vous engager dans un défi qui peut vraiment changer les choses.</p>
+                <p class="fw-bold">Chaque petit geste compte pour la planète !</p>
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    Partagez votre engagement sur les réseaux sociaux pour inspirer vos proches !
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a href="{{ url_for('share') }}" class="btn btn-primary">
+                    <i class="fas fa-share-alt"></i> Partager mon engagement
+                </a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
